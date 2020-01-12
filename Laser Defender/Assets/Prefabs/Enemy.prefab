@@ -10,8 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2922166923051278164}
   - component: {fileID: 2922166923051278167}
+  - component: {fileID: 6012256726340071602}
+  - component: {fileID: 9139403286897379449}
   - component: {fileID: 5118124307537643952}
-  m_Layer: 0
+  - component: {fileID: -1248811648506393556}
+  - component: {fileID: 3121220819220720209}
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,6 +86,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &6012256726340071602
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2922166923051278166}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.35
+--- !u!50 &9139403286897379449
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2922166923051278166}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &5118124307537643952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,6 +135,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2642becbd597b2345951a0755392f433, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveConfig: {fileID: 11400000, guid: b6e8bdc3a4b06d040a01074e81f3103b, type: 2}
-  moveSpeed: 2
   waypointsThreshold: 0.1
+--- !u!114 &-1248811648506393556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2922166923051278166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf3041a6c4083184797cc0d58802e72e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  shotCounter: 0
+  minTimeBetweenShots: 1
+  maxTimeBetweenShots: 2
+  projectilePrefab: {fileID: 238693876958854201, guid: af30f9282b031024383a53e2fca35a5a,
+    type: 3}
+  projectileSpeed: 6
+  shootSound: {fileID: 8300000, guid: dfa9debbfbf35294fba8970e4c0307ec, type: 3}
+  shootSoundVolume: 0.5
+  deathVFX: {fileID: 7835828441047545756, guid: 00e9390aaa01a404b8ba04635122d91d,
+    type: 3}
+  deathSFX: {fileID: 8300000, guid: a8760d845f526bb4ab21d66615e331cd, type: 3}
+  deathSoundVolume: 0.5
+  scoreAmount: 67
+--- !u!114 &3121220819220720209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2922166923051278166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad7ad985853fb2488ea3edcac590181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1000
